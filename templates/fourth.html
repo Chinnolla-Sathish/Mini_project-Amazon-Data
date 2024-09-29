@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+
+    .header {
+      background-color: rgb(73, 157, 196);
+      padding:10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      width: 100px;
+      height: auto;
+      margin-right: 10px;
+    }
+    .nav-links {
+      display: flex;
+    }
+    .nav-links a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: black;
+    }
+    .body-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header1 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .icon {
+            width: 250px;
+            height: 200px;
+            margin-right: 10px;
+        }
+
+        .heading {
+            font-size: 28px;
+        }
+
+        .center-image {
+            max-width: 100%;
+            max-height: 70vh;
+        }
+
+        /*------------------My edits------------*/
+        .main{
+          width:100%;
+          height:100vh;
+        }
+        .container{
+          padding:10px 10%;
+        }
+        body{
+          background:black;
+          margin:0;
+          /*color:#fff;*/
+        }
+        .logo i {
+
+          font-size:60px;
+        }
+        .nav-links a{
+          margin: 10px 20px;
+          font-weight:bold;
+        }
+        .nav-links a{
+          font-size:18px;
+          position: relative;
+        }
+        .nav-links a::after{
+          content: '';
+          width:0;
+          height:3px;
+          background:#ff004f;
+          position:absolute;
+          left:0;
+          bottom: -6px;
+          transition:0.5s;
+        }
+        .nav-links a:hover::after{
+          width:100%;
+        }
+        .header{
+
+          padding:10px 3%;
+          margin:0;
+        }
+        .nav-links i{
+          margin-right: 10px;
+          font-size: 18px;
+        }
+        .header1 h1{
+          color:#fff;
+        }
+        .footer{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 20px;
+          color:#fff;
+          margin-top:130px;
+          background-color:#80808080;
+        }
+  </style>
+    <meta charset="UTF-8">
+    <title>Show CSV Data</title>
+    <script src="https://kit.fontawesome.com/60a165d566.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="main">
+      <div class="header">
+          <div class="logo">
+            <!--<img src="static/logo.png" alt="Logo" >-->
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+          </div>
+          <div class="nav-links">
+            <a href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="{{ url_for('third_page') }}"><i class="fa-solid fa-circle-info"></i>About</a>
+          </div>
+      </div>
+      <div class="container">
+        <div class="body-content">
+          <div class="header1">
+            <img src="../static/bar.png" alt="Icon" class="icon">
+            <h1 class="heading">Bar Graph</h1>
+          </div>
+          <img src="../static/graph.png" alt="Centered Image" class="center-image">
+        </div>
+
+      </div>
+      <div class="footer">
+        <p>Copy right ©  SNSS</p>
+      </div>
+
+    </div>
+</body>
+</html>

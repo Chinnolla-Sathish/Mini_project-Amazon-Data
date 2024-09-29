@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-image: url("static/background1.jpeg"); /* Change image path */
+    background-size: 130%;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .header {
+    background-color: rgb(73, 157, 196);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+  }
+  .nav-links {
+    display: flex;
+  }
+  .nav-links a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+  }
+  .text-container h1 {
+    text-align: right;
+    font-size: 72px; /* Make the text bigger */
+    font-weight: bold; /* Make the text bold */
+    color: black;
+    margin-bottom: 15px;
+    margin-left: -20px; /* Move the text a little to the left */
+  }
+  .text-container h1 .icon {
+    font-size: 72px;
+    margin-right: 10px;
+  }
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* Align form to the right */
+    align-items: center; /* Align form items to the right */
+    margin-top: 20px;
+  }
+
+  input[type="file"],
+  input[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 25px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  input[type="file"] {
+    margin-right: 10px;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+/* ----------------My Edits----------------------*/
+.main{
+  width:100%;
+  height:100vh;
+}
+.container{
+  padding:10px 10%;
+}
+body{
+  background:black;
+  /*background-image: url("../static/background1.jpeg");*/
+  /*color:#fff;*/
+}
+.text-container h1{
+  color:#fff;
+}
+.text-container{
+  /*background: red;*/
+  margin-top: 10%;
+}
+.form{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+/*  background: orange;*/
+
+}
+.text{
+  /*background:yellow;*/
+  display:flex;
+  align-items: center;
+  justify-content: center;
+    margin-bottom: 20px;
+}
+.logo i {
+
+  font-size:60px;
+}
+.nav-links a{
+  margin: 10px 20px;
+  font-weight:bold;
+}
+.nav-links a{
+  font-size:18px;
+  position: relative;
+}
+.nav-links a::after{
+  content: '';
+  width:0;
+  height:3px;
+  background:#ff004f;
+  position:absolute;
+  left:0;
+  bottom: -6px;
+  transition:0.5s;
+}
+.nav-links a:hover::after{
+  width:100%;
+}
+.header{
+  padding:10px 3%;
+}
+.nav-links i{
+  margin-right: 10px;
+  font-size: 18px;
+}
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  color:#fff;
+  margin-top:130px;
+  background-color:#80808080;
+}
+</style>
+<script src="https://kit.fontawesome.com/60a165d566.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <div class="main">
+      <div class="header">
+        <div class="logo">
+        <!-- <img src="../static/logo.png" alt="Logo"> -->
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+        </div>
+        <div class="nav-links">
+          <a href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i>Home</a>
+          <a href="{{ url_for('third_page') }}"><i class="fa-solid fa-circle-info"></i>About</a>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="body-content">
+          <div class="image-container">
+            <!-- No need for an image here since the background is an image -->
+          </div>
+          <div class="text-container">
+
+            <div class="text">
+              <br><br><br><br><br><br>
+              <h1 >
+                  <span class="icon">📁</span>
+                  Upload Your File <br>Here
+              </h1> <!-- Align to right with some right margin -->
+
+            </div>
+            <div class=form>
+              <form action="/upload" method="POST" enctype="multipart/form-data">
+                  <input type="file" name="csv_file">
+                  <input type="submit" value="Upload">
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="footer">
+        <p>Copy right ©  SNSS</p>
+      </div>
+    </div>
+
+</body>
+</html>

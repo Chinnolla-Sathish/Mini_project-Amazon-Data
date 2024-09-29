@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Background Page with Header</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('static/about.png'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column; /* Stack header and container vertically */
+      min-height: 90vh; /* Ensure the body covers at least the viewport height */
+    }
+
+    .header {
+    background-color: rgb(73, 157, 196);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+  }
+  .nav-links {
+    display: flex;
+  }
+  .nav-links a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+  }
+
+
+    /*----------------My edits----------------------*/
+    .main{
+      width:100%;
+      height:100vh;
+    }
+    .container{
+
+      padding:10px 10%;
+    }
+    body{
+      background-color: black;
+      background-image: url('../static/about.png');
+    }
+    .logo i{
+      font-size:60px;
+    }
+    .nav-links a{
+      margin: 10px 20px;
+      font-weight:bold;
+    }
+    .nav-links a{
+      font-size:18px;
+      position: relative;
+    }
+    .nav-links a::after{
+      content: '';
+      width:0;
+      height:3px;
+      background:#ff004f;
+      position:absolute;
+      left:0;
+      bottom: -6px;
+      transition:0.5s;
+    }
+    .nav-links a:hover::after{
+      width:100%;
+    }
+    .header{
+      padding:10px 3%;
+    }
+    .nav-links i{
+      margin-right: 10px;
+      font-size: 18px;
+    }
+    .container h1{
+      font-size: 70px;
+      font-weight: bold;
+      color:#fff;
+      display:flex;
+      align-items: center;
+      justify-content:flex-start;
+      color:black;
+    }
+    .container p{
+      color:#808080;
+    }
+    .footer{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      color:#fff;
+      margin-top:315px;
+      background-color:#80808080;
+    }
+    .content{
+
+      width:60%;
+      height:70%;
+    }
+
+  </style>
+  <script src="https://kit.fontawesome.com/60a165d566.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main">
+      <div class="header">
+          <div class="logo">
+            <!--<img src="static/logo.png" alt="Logo">-->
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+          </div>
+          <div class="nav-links">
+              <a href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i>Home</a>
+          </div>
+      </div>
+
+
+    <div class="container">
+      <div class="content">
+        <h1>About this Website</h1>
+        <p>This website aims to analyze and visualize Amazon spending data.The application will allow users to import their purchase history from Amazon, process the data, and generate visualizations and reports. By utilizing data analytics techniques, the application will offer users a comprehensive overview of their spending habits, including trends, categories, and frequency of purchases. Through interactive graphs and charts, users will gain valuable insights into their consumption patterns, helping them make informed financial decisions. Overall, this web application seeks to empower users with a deeper understanding of their Amazon spending behavior and promote better financial management.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Copy right ©  SNSS</p>
+    </div>
+  </div>
+</body>
+</html>
